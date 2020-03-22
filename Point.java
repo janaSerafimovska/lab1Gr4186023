@@ -4,6 +4,8 @@ class Point {
 
 	//TODO add new variable
 
+	String color="green";
+
 	//TODO constructor
 
 	//TODO setters and getters
