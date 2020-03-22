@@ -69,6 +69,52 @@ class Point {
 		System.out.println("(" + this.x + "," + this.y + ")");
 	}
 
+}
 
+class Canvas
+{
+	List<Point> points;
+
+	public Canvas() {
+		this.points = new List<>();
+	}
+
+	public void addPoint(Point newPoint)
+	{
+		points.add(newPoint);
+	}
+
+	public boolean deletePoint(Point toDelete)
+	{
+		if(!points.contains(toDelete))
+			return false;
+		else
+		{
+			points.remove(toDelete);
+			return true;
+		}
+	}
+
+	public void scalePoints(int value)
+	{
+		for (Point p : points)
+		{
+			p.x+=value;
+			p.y+=value;
+		}
+	}
+
+	public Point averagePoint()
+	{
+		int averageX=0,averageY=0;
+
+		for (Point p: points)
+		{
+			averageX+=p.x;
+			averageY+=p.y;
+		}
+
+		return new Point(averageX,averageY);
+	}
 
 }
